@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'images/download.jpg' %}">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+</head>
+<style>
+    h1{
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+    }
+    body{
+        background-image: url("{% static 'images/download.jpg' %}");
+        background-position: center;
+        font-family: 'Baloo Bhai 2', cursive;
+        background-size: cover;
+    }
+    .btn{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+</style>
+<body   align='center'>
+    <h1>UPDATE STUDENT INFORMATION</h1>
+    <form align='center' method="POST">
+        {%csrf_token%}
+        PRN : <input type="text" name='prn' value="{{student.prn}}"><br><br>
+        NAME : <input type="text" name='name' value="{{student.name}}"><br><br>
+        MATHS : <input type="text" name='maths' value="{{student.maths}}"><br><br>
+        SCIENCE : <input type="text" name='science' value="{{student.science}}"><br><br>
+        ENGLISH : <input type="text" name='english' value="{{student.english}}"><br><br>
+        SOCIAL SCIENCE : <input type="text" name='socialsci' value="{{student.socialsci}}"><br><br>
+        HINDI : <input type="text" name='hindi' value="{{student.hindi}}"><br><br>
+        <input type="submit" value="UPDATE" class="btn">
+    </form>
+</body>
+</html>

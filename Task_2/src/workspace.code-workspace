@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "D:\\web development"
+		},
+		{
+			"path": "C:\\Users\\A\\Desktop\\web design"
+		},
+		{
+			"path": "C:\\Users\\A\\Desktop\\img"
+		},
+		{
+			"path": "E:\\djangoprojects"
+		},
+		{
+			"path": "E:\\lmsprojects"
+		},
+		{
+			"path": "E:\\shop management system"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web development"
+	}
+}

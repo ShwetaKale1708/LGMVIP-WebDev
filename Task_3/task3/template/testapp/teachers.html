@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(rgb(9, 82, 92), rgb(188, 224, 233));
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        text-align: center;
+       
+        
+    }
+    table{
+        text-align: center;
+    }
+    .logout{
+        font-family: 'Baloo Bhai 2', cursive;
+        padding: 1%;
+        background-color:black ;
+        color: white;
+        border-radius: 10%;
+        font-weight: bolder;
+        margin-left: 30%;
+        left: 55%;
+        top:1%;
+        position: absolute;
+        text-decoration: none;
+    }
+.logout:hover{
+    background-color:white ;
+    color: black;
+}
+.btn{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+    
+</style>
+<body>
+    <div  align='center'>
+        <h1>STUDENT RESULTS:</h1>
+        <a class='logout' href="/accounts/logout">LOGOUT</a>
+        <table class="table table-bordered" border='2'>
+            <thead >
+                <th>PRN NO.</th>
+                <th>NAME</th>
+                <th>MATHS</th>
+                <th>SCIENCE</th>
+                <th>ENGLISH</th>
+                <th>SOCIAL SCIENCE</th>
+                <th>HINDI</th>
+            
+                <th>ACTIONS</th>
+            </thead>
+            {%for result in results%}
+                <tr>
+                    <td>{{result.prn}}</td>
+                    <td>{{result.name}}</td>
+                    <td>{{result.maths}}</td>
+                    <td>{{result.science}}</td>
+                    <td>{{result.english}}</td>
+                    <td>{{result.socialsci}}</td>
+                    <td>{{result.hindi}}</td>
+                
+                    <td><a href="/update/{{result.prn}} " class="btn">UPDATE</a> <a href="/delete/{{result.prn}}" class="btn">DELETE</a></td>
+                
+                </tr>
+            {%endfor%}
+        </table><br>
+        <a href="/create" class="btn">INSERT NEW STUDENT</a>
+    </div>
+</body>
+</html>
